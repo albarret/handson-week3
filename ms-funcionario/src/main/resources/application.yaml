@@ -1,0 +1,21 @@
+server:
+  port: 9090
+  name: Ms Funcionario
+
+spring:
+  application:
+    name: ms-funcionario
+  data:
+    mongodb:
+      auto-index-creation: true
+      uri: mongodb://localhost:27017/funcionarios?retryWrites=true&w=majority
+
+springdoc:
+  swagger-ui:
+    path: /funcionario-api-docs.html
+  paths-to-match: /**/funcionario/**
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8090/eureka
